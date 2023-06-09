@@ -46,7 +46,7 @@ const app = Vue.createApp({
     methods: {
         requestSong(){
             axios.get("http://localhost/php-dischi-json/api-dischi.php")
-                .then(response => this.arrSong = response.data);
+                .then((response) => (this.arrSong = response.data));
         }       
     },
     created() {
