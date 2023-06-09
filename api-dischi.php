@@ -1,6 +1,8 @@
 <?php
 
-$arrSong = [
+$arrSong = file_get_contents('album.json');
+
+/* $arrSong = [
     [
         'name'   => "New Jersey",
         'artist' => "Bon Jovi",
@@ -37,7 +39,16 @@ $arrSong = [
         'date'   => "2002",
         'cover'  => "img/eric_clapton.jpg",
     ],
-];
+]; */
 
 header('content-type: application/json');
-echo json_encode($arrSong);
+echo ($arrSong);
+
+/* Questo serve per generare l'array prima di avere il file json */
+
+// echo json_encode($arrSong);
+
+/* Con queste ho creato il file.json */
+
+// $json_string = json_encode($arrSong);
+// file_put_contents('album.json', $json_string);
