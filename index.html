@@ -14,14 +14,14 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <div class="content d-flex gap-2">
-                        <div v-for="album in arrSong" :key="album">
-                            <img :src="album.cover" alt="">
-                            <p>{{album.name}}</p>
-                            <p>{{album.artist}}</p>
-                            <p>{{album.date}}</p>
+            <div class="row col-6">
+                <div class="content d-flex gap-2 p-3">
+                    <div class="bg-body-secondary rounded" v-for="album in arrSong" :key="album">
+                        <img class="card" :src="album.cover" alt="">
+                        <div class="text-center">
+                            <div class="fw-bold">{{album.name}}</div>
+                            <div>{{album.artist}}</div>
+                            <div class="fw-bold">{{album.date}}</div>
                         </div>
                     </div>
                 </div>
