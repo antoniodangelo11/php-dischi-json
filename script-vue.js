@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
       return {
         arrSong: [],
-        
+
         // arrSong: [
         //     {
         //     name: "New Jersey",
@@ -42,6 +42,15 @@ const app = Vue.createApp({
         //     },
         // ],
       };
+    },
+    methods: {
+        requestSong(){
+            axios.get("http://localhost/php-dischi-json/api-dischi.php")
+                .then(response => this.arrSong = response.data);
+        }       
+    },
+    created() {
+        this.requestSong();
     },
 });
 
